@@ -2,9 +2,9 @@ import { useSelector } from "react-redux"
 
 export function Catalog() {
 
-  const state = useSelector(state => state.email)
+  const catalog = useSelector(state => state)
 
-  console.log(state.email)
+  console.log(catalog)
 
   return (
     <h1>Catalog</h1>

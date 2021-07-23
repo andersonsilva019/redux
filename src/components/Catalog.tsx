@@ -12,7 +12,7 @@ export function Catalog() {
     http.get('/products').then(response => setCatalog(response.data))
   }, [])
 
-  const handleProductToCart = (product: IProduct) => {
+  const handleAddProductToCart = (product: IProduct) => {
     dispatch(addProductToCart(product))
   }
 
@@ -24,7 +24,7 @@ export function Catalog() {
           <strong>{product.title}</strong> {" - "}
           <span>{product.price}</span> {"  "}
           <button
-            onClick={() => handleProductToCart(product)}
+            onClick={() => handleAddProductToCart(product)}
             type="button"
           >Comprar</button>
         </article>

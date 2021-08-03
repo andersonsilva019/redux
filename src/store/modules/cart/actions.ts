@@ -18,5 +18,6 @@ export function addProductToCartResolved(product: IProduct) {
 export function addProductToCartRejected(productId: number) {
   return {
     type: cartConstants.ADD_PRODUCT_TO_CART_REJECTED,
+    payload: { productId }
   }
 }

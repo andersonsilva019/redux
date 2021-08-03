@@ -4,7 +4,8 @@ import { cartConstants } from "./constants"
 import { ICartState } from "./types"
 
 const INITIAL_STATE: ICartState = {
-  items: []
+  items: [],
+  failedStockCheck: []
 }
 
 export const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
@@ -29,6 +30,12 @@ export const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
       //   ...state,
       //   items: [...state.items, { product, quantity: 1 }]
       // }
+    }
+
+    case cartConstants.ADD_PRODUCT_TO_CART_REJECTED: {
+      return produce(state, (draft) => {
+        draft.failedStockCheck.push(action.payload?.productId)
+      })
     }
 
     default: {

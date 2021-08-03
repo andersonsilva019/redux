@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { addProductToCart } from "../store/modules/cart/actions"
+import { addProductToCartPending } from "../store/modules/cart/actions"
 import { IProduct } from "../store/modules/cart/types"
 
 type CatalogItemProps = {
@@ -11,7 +11,7 @@ export function CatalogItem({ product }: CatalogItemProps) {
   const dispatch = useDispatch()
 
   const handleAddProductToCart = () => {
-    dispatch(addProductToCart(product))
+    dispatch(addProductToCartPending(product))
   }
 
   return (

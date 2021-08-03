@@ -1,10 +1,10 @@
 import { all, takeLatest, select } from 'redux-saga/effects';
 import { IState } from '../..';
-import { addProductToCart } from './actions';
+import { addProductToCartPending } from './actions';
 
 import { cartConstants } from './constants'
 
-type CheckProductStockAction = ReturnType<typeof addProductToCart>;
+type CheckProductStockAction = ReturnType<typeof addProductToCartPending>;
 
 function* checkProductStock({ payload }: CheckProductStockAction) {
   const { product } = payload;
@@ -17,5 +17,5 @@ function* checkProductStock({ payload }: CheckProductStockAction) {
 }
 
 export default all([
-  takeLatest(cartConstants.ADD_PRODUCT_TO_CART, checkProductStock)
+  takeLatest(cartConstants.ADD_PRODUCT_TO_CART_PENDING, checkProductStock)
 ])

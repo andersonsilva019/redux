@@ -18,6 +18,5 @@ export function Catalog() {
         <CatalogItem key={product.id} product={product} />
       ))}
     </>
-
   )
 }
